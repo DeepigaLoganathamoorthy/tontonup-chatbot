@@ -14,5 +14,5 @@ try:
     print("✅ CONNECTION SUCCESSFUL!")
     print("Found these collections:", [c.name for c in collections.collections])
 except Exception as e:
-    print("❌ CONNECTION FAILED!")
+    print("CONNECTION FAILED!")
     print(f"Error details: {e}")

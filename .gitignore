@@ -6,3 +6,4 @@ qdrant_data/
 *.sqlite
 *.log
 venv/
+.streamlit/

@@ -96,14 +96,6 @@ def retrieve_faqs(query, top_k=3, use_intent=True):
             collection_name="faq_collection",
             query=query_vector,
             limit=top_k,
-            query_filter=Filter(
-                must=[
-                    FieldCondition(
-                        key="metadata.intent",
-                        match=MatchValue(value=intent)
-                    )
-                ]
-            )
         ).points
 
         if results:

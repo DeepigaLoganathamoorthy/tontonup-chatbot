@@ -107,10 +107,11 @@ Qdrant searches within that intent
 ```text
 .
 ├── app_bot.py                     # Streamlit UI & Chat Logic
-├── pipeline.py                    # the logic for the brain (lite version) (Vector Search + Gemini API)
+├── pipe.py                        # the logic for the brain (lite version) (Vector Search + Gemini API)
 ├── requirements.txt               # Dependency list
 ├── data_preprocess.py             # the data cleaning and schema decisions
 ├── embed_model.py                 # embeddings & models used here for RAG
+├── upload_qdrant.py               # store embeddings in Qdrant cloud
 └── data/
     ├── FAQ.docx                   # Raw data
     └── augmented_faq.json         # augmented/metadata
