@@ -48,7 +48,7 @@ if query:
     
     with st.chat_message("bot"):
         with st.spinner("wait ah..."):
-            ans = ask_bot(query)
+            ans = generate_answer(query)
             st.write(ans)
     
     # save to history

@@ -18,41 +18,9 @@ def load_resources():
 @st.cache_resource
 def load_stuff():
     m = SentenceTransformer("BAAI/bge-m3")
-    db = "./qdrant_data"
-    if not os.path.exists(db): os.makedirs(db)
-    
-    c = QdrantClient(path=db)
-    
-    try:
-        c.get_collection("faq_collection")
-    except:
-        print("Collection missing Rebuild")
-        from qdrant_client.models import VectorParams, Distance, PointStruct
-        
-        c.recreate_collection(
-            collection_name="faq_collection",
-            vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
-        )
-        
-        with open('./data/augmented_faq.json', 'r') as f:
-            data = json.load(f)
-            
-        points = []
-        for i, faq in enumerate(data):
-            con = faq["content"]
-            # quick and dirty text prep
-            txt = f"{con['cleaned_question']} {con.get('answer_summary', '')}"
-            v = m.encode(txt, normalize_embeddings=True).tolist()
-            
-            points.append(PointStruct(
-                id=i, 
-                vector=v, 
-                payload={"content": con, "metadata": faq.get("metadata", {})}
-            ))
-        
-        c.upsert(collection_name="faq_collection", points=points)
-        print("Done seeding!")
-        
+    db = "./qdrant_data"    
+    c = QdrantClient(path=db,force_disable_check_same_thread=True)
+
     return m, c
 
 model, q_client = load_stuff()
