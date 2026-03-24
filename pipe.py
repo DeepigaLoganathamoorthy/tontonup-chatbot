@@ -2,40 +2,30 @@ import os, json, requests, streamlit as st
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
 from qdrant_client.models import Filter, FieldCondition, MatchValue
+from qdrant_client.models import VectorParams, Distance, PointStruct
 
-
-API_KEY = st.secrets.get("GEMINI_API_KEY")
+GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
+QDRANT_URL = st.secrets["QDRANT_URL"]
+QDRANT_API_KEY = st.secrets["QDRANT_API_KEY"]
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
-
-
-@st.cache_resource
-def load_resources():
-    model = SentenceTransformer("BAAI/bge-m3")
-    client = QdrantClient(path="./qdrant_data")
-    return model, client
-
 
 @st.cache_resource
 def load_stuff():
-    m = SentenceTransformer("BAAI/bge-m3")
-    db = "./qdrant_data"    
-    c = QdrantClient(path=db,force_disable_check_same_thread=True)
+    client = QdrantClient(url=QDRANT_URL, api_key=QDRANT_API_KEY)
+    model = SentenceTransformer("BAAI/bge-m3")
+    return client, model
 
-    return m, c
-
-model, q_client = load_stuff()
+q_client, model = load_stuff()
 
 
-# =========================
-# GEMINI CALL
-# =========================
+
 def call_gemini(prompt, debug=False):
-    if not API_KEY:
+    if not GEMINI_API_KEY:
         return None
 
     headers = {
         "Content-Type": "application/json",
-        "x-goog-api-key": API_KEY
+        "x-goog-api-key": GEMINI_API_KEY
     }
 
     data = {

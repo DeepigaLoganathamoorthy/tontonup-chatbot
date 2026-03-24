@@ -23,8 +23,8 @@ with st.sidebar:
 for i, m in enumerate(st.session_state.chat_his):
     role = m["role"]
     with st.chat_message(role):
-        st.write(m["txt"])
-         
+        st.markdown(m["txt"]) 
+
         if role == "bot" and i == len(st.session_state.chat_his)-1:
             spacer, c1, c2 = st.columns([0.8, 0.1, 0.1])
 
@@ -42,15 +42,15 @@ for i, m in enumerate(st.session_state.chat_his):
 query = st.chat_input("Dah bayar tapi takleh tengok?")
 
 if query:
-    st.session_state.chat_his.append({"role": "user", "txt": query})
     with st.chat_message("user"):
-        st.write(query)
+        st.markdown(query)
+
+    st.session_state.chat_his.append({"role": "user", "txt": query})
     
-    with st.chat_message("bot"):
-        with st.spinner("wait ah..."):
+    with st.chat_message("assistant"):
+        with st.spinner("wait ya..."):
             ans = generate_answer(query)
             st.write(ans)
     
     # save to history
-    st.session_state.chat_his.append({"role": "bot", "txt": ans})
-    st.rerun()
+    st.session_state.chat_his.append({"role": "assistant", "txt": ans})
