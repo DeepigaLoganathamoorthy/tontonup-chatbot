@@ -1,5 +1,5 @@
 import streamlit as st
-from pipe import ask_bot
+from pipe import generate_answer
 import os
 from datetime import datetime
 
@@ -8,18 +8,18 @@ st.set_page_config(page_title="TontonUp Help", layout="centered")
 st.title("TontonUp Support (Beta)")
 st.write("Type your problem below, we will do our best to help")
 
-# init session
+#init session
 if 'chat_his' not in st.session_state:
     st.session_state.chat_his = []
 
-# sidebar
+#sidebar
 with st.sidebar:
     st.subheader("Admin Tools")
     if st.button("Reset Chat"):
         st.session_state.chat_his = []
         st.rerun()
 
-# chat display
+#chat display
 for i, m in enumerate(st.session_state.chat_his):
     role = m["role"]
     with st.chat_message(role):
@@ -29,7 +29,7 @@ for i, m in enumerate(st.session_state.chat_his):
             spacer, c1, c2 = st.columns([0.8, 0.1, 0.1])
 
             with spacer:
-                st.empty() # This acts as an invisible "pusher"
+                st.empty()
 
             with c1:
                 if st.button("👍", key=f"up_{i}"):
