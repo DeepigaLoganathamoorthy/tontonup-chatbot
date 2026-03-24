@@ -50,6 +50,7 @@ def load_stuff():
         
     return m, c
 
+model, client = load_stuff() 
 
 def call_gemini(p):
     if not key: return "API Key missing!"
