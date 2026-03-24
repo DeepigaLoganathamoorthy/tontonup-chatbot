@@ -25,21 +25,24 @@ for i, m in enumerate(st.session_state.chat_his):
     with st.chat_message(role):
         st.write(m["txt"])
          
-        # Feedback buttons for the last bot message
         if role == "bot" and i == len(st.session_state.chat_his)-1:
-            c1, c2, c3 = st.columns([0.1, 0.1, 0.1]) # Tight columns for emojis
-            
+            spacer, c1, c2 = st.columns([0.8, 0.1, 0.1])
+
+            with spacer:
+                st.empty() # This acts as an invisible "pusher"
+
             with c1:
                 if st.button("👍", key=f"up_{i}"):
-                    st.session_state.feedback = "Thanks!"
+                    st.toast("Thanks!")
+
             with c2:
                 if st.button("👎", key=f"down_{i}"):
-                    st.session_state.feedback = "Noted."
-            
-            # This makes the text appear right next to the buttons
+                    st.toast("Noted.") 
             if 'feedback' in st.session_state and st.session_state.feedback:
                 with c3:
                     st.caption(f":green[{st.session_state.feedback}]")
+
+
 
 query = st.chat_input("Dah bayar tapi takleh tengok?")
 
