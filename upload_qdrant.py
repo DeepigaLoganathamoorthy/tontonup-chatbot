@@ -12,16 +12,13 @@ COLLECTION_NAME = "faq_collection"
 
 client = QdrantClient(url=URL, api_key=KEY)
 
-# 1. Load Data First to Detect Size
 with open(JSON_PATH, "r", encoding="utf-8") as f:
     faq_data = json.load(f)
 
-# Detect vector size from the first item in your JSON
 sample_vector = faq_data[0]["vector"]
 detected_size = len(sample_vector)
-print(f"📏 Detected Vector Size: {detected_size}")
+print(f"{detected_size}")
 
-# 2. Check if Collection Exists
 collections = client.get_collections().collections
 exists = any(c.name == COLLECTION_NAME for c in collections)
 
@@ -32,8 +29,7 @@ if not exists:
         vectors_config=VectorParams(size=detected_size, distance=Distance.COSINE)
     )
 else:
-    print(f"🔄 Collection '{COLLECTION_NAME}' already exists. Overwriting data...")
-    # Optional: use client.recreate_collection() if you want to wipe it and start fresh
+    print(f"Collection '{COLLECTION_NAME}' already exists. Overwriting data...")
 
 # 3. Prepare and Upload Points
 points = [
@@ -48,4 +44,4 @@ points = [
 ]
 
 client.upsert(collection_name=COLLECTION_NAME, points=points)
-print(f"✅ SUCCESS: {len(points)} items uploaded with size {detected_size}!")
+print(f"SUCCESS: {len(points)} items uploaded with size {detected_size}!")
