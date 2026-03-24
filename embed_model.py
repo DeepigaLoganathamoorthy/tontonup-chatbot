@@ -47,6 +47,26 @@ with open(output_path, "w", encoding="utf-8") as f:
 #q_client = QdrantClient(":memory:")
 q_client = QdrantClient(path="./qdrant_data")
 
+# Define path
+db_path = "./qdrant_data"
+
+# Check if the folder exists locally in the repo
+if not os.path.exists(db_path):
+    print("⚠️ Qdrant data folder not found! Creating a new one...")
+    os.makedirs(db_path)
+
+# Connect to the client
+try:
+    q_client = QdrantClient(path=db_path)
+    # Check if your collection actually exists
+    collections = q_client.get_collections().collections
+    if not any(c.name == "faq_collection" for c in collections):
+        print("⚠️ Collection 'faq_collection' missing. You might need to re-run the insertion script!")
+except Exception as e:
+    print(f"❌ Qdrant load error: {e}")
+    q_client = QdrantClient(":memory:")
+
+
 #create collec
 q_client.recreate_collection(
     collection_name="faq_collection",
