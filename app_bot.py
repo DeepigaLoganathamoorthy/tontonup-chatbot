@@ -2,6 +2,9 @@ import streamlit as st
 from embed_model import generate_answer
 import csv
 from datetime import datetime
+import streamlit as st
+
+API_KEY = st.secrets["GEMINI_API_KEY"]
 
 st.set_page_config(page_title="TontonUp Assistant", page_icon="🎬")
 
