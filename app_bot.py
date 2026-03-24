@@ -33,16 +33,11 @@ for i, m in enumerate(st.session_state.chat_his):
 
             with c1:
                 if st.button("👍", key=f"up_{i}"):
-                    st.toast("Thanks!")
+                    pass
 
             with c2:
                 if st.button("👎", key=f"down_{i}"):
-                    st.toast("Noted.") 
-            if 'feedback' in st.session_state and st.session_state.feedback:
-                with c3:
-                    st.caption(f":green[{st.session_state.feedback}]")
-
-
+                    pass
 
 query = st.chat_input("Dah bayar tapi takleh tengok?")
 
