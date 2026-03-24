@@ -1,0 +1,8 @@
+__pycache__/
+*.pyc
+.env
+.qdrant/
+qdrant_data/
+*.sqlite
+*.log
+venv/

@@ -1,0 +1,304 @@
+[
+  {
+    "id": "faq_001",
+    "content": {
+      "original_question": "Kenapa saya tidak boleh menonton selepas membuat bayaran?",
+      "original_answer": "Kami menyarankan anda supaya mengikuti langkah-langkah berikut untuk mengaktifkan langganan anda selepas bayaran dilakukan: 1. Klik pada ikon 'setting' pada bahagian atas sebelah kiri (telefon bimbit) aplikasi Tonton atau sebelah kanan (komputer) laman web (website) anda. 2. Pilih Tetapan Aplikasi (App Settings) daripada menu. 3. Klik butang Akaun (Account) 4. Klik butang Pembaharuan Kelayakan (Refresh Entitlement) 5. Tunggu sehingga tanda ✅ 6. Klik logo Tonton untuk kembali ke laman utama.",
+      "cleaned_question": "kenapa saya tidak boleh menonton selepas membuat bayaran?",
+      "cleaned_answer": "kami menyarankan anda supaya mengikuti langkah-langkah berikut untuk mengaktifkan langganan anda selepas bayaran dilakukan: 1. klik pada ikon 'setting' pada bahagian atas sebelah kiri (telefon bimbit) aplikasi tonton atau sebelah kanan (komputer) laman web (website) anda. 2. pilih tetapan aplikasi (app settings) daripada menu. 3. klik butang akaun (account) 4. klik butang pembaharuan kelayakan (refresh entitlement) 5. tunggu sehingga tanda 6. klik logo tonton untuk kembali ke laman utama.",
+      "cleaned_question_en": "Why can't I watch after making payment?",
+      "cleaned_answer_en": "We recommend you follow these steps to activate your subscription after payment: 1. Click on the 'setting' icon on the top left (mobile phone) of the Tonton app or on the right (computer) of your website. 2. Select app settings from the menu. 3. Click the account button. 4. Click the refresh entitlement button. 5. Wait for the indicator. 6. Click the Tonton logo to return to the homepage.",
+      "alternate_questions": [
+        "Why can't I stream after I've paid?",
+        "My payment was successful, but I can't watch anything.",
+        "How do I activate my Tonton subscription after making a payment?"
+      ],
+      "answer_summary": "To activate your subscription after payment, you need to refresh your entitlement through the settings menu in the Tonton app or website.",
+      "answer_steps": [
+        "Click on the 'setting' icon on the top left (mobile phone) of the Tonton app or on the right (computer) of your website.",
+        "Select app settings from the menu.",
+        "Click the account button.",
+        "Click the refresh entitlement button.",
+        "Wait for the indicator.",
+        "Click the Tonton logo to return to the homepage."
+      ]
+    },
+    "metadata": {
+      "intent": "subscription_activation_issue",
+      "category": "payment",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "menonton",
+          "bayaran",
+          "langganan",
+          "tonton",
+          "aktifkan"
+        ],
+        "en": [
+          "watch",
+          "payment",
+          "subscription",
+          "tonton",
+          "activate"
+        ]
+      }
+    }
+  },
+  {
+    "id": "faq_002",
+    "content": {
+      "original_question": "Saya telah melanggan tetapi kenapa masih mempunyai iklan?",
+      "original_answer": "Untuk makluman anda, langganan TontonUp memberikan anda akses untuk menonton filem dan drama eksklusif dan saluran TV premium yang hanya boleh didapati di aplikasi Tonton. Untuk menonton tanpa iklan, anda perlulah memilih salah satu daripada saluran TV premium dan bahan tontonan eksklusif yang bertanda logo TontonUp. Untuk cerita tontonan yang bertanda TontonUp, iklan hanya disiarkan pada episod pertama sehingga ke tiga bagi drama yang ditonton sahaja dan tidak akan mempunyai iklan pada episod seterus .",
+      "cleaned_question": "saya telah melanggan tetapi kenapa masih mempunyai iklan?",
+      "cleaned_answer": "untuk makluman anda, langganan tontonup memberikan anda akses untuk menonton filem dan drama eksklusif dan saluran tv premium yang hanya boleh didapati di aplikasi tonton. untuk menonton tanpa iklan, anda perlulah memilih salah satu daripada saluran tv premium dan bahan tontonan eksklusif yang bertanda logo tontonup. untuk cerita tontonan yang bertanda tontonup, iklan hanya disiarkan pada episod pertama sehingga ke tiga bagi drama yang ditonton sahaja dan tidak akan mempunyai iklan pada episod seterus .",
+      "cleaned_question_en": "I have subscribed but why do I still have ads?",
+      "cleaned_answer_en": "For your information, a tontonup subscription gives you access to watch exclusive movies and dramas and premium TV channels only available on the tonton app. To watch without ads, you need to choose one of the premium TV channels and exclusive viewing content marked with the tontonup logo. For tontonup-marked viewing content, ads are only broadcast on the first to third episodes of the drama being watched and will not have ads on subsequent episodes.",
+      "alternate_questions": [
+        "Why am I still seeing ads after subscribing to tontonup?",
+        "I've subscribed, but ads are still appearing, why?",
+        "Does a tontonup subscription remove all advertisements?"
+      ],
+      "answer_summary": "A tontonup subscription provides access to exclusive content and premium channels; to watch without ads, select tontonup-marked content, where ads only appear on the first three episodes of a drama.",
+      "answer_steps": []
+    },
+    "metadata": {
+      "intent": "ads_in_subscription",
+      "category": "subscription",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "langganan",
+          "iklan",
+          "tontonup",
+          "filem",
+          "drama"
+        ],
+        "en": [
+          "subscription",
+          "ads",
+          "tontonup",
+          "exclusive content",
+          "premium channels"
+        ]
+      }
+    }
+  },
+  {
+    "id": "faq_003",
+    "content": {
+      "original_question": "Bagaimana saya nak membatalkan langganan bulanan TontonUp saya?",
+      "original_answer": "Untuk makluman, anda boleh membatalkan pembayaran berulang automatik anda pada Profil Tonton anda. Bagi rujukan mudah anda, berikut adalah langkah-langkah untuk membatalkan langganan TontonUp anda: Anda boleh menggunakan TELEFON BIMBIT atau DESKTOP melalui laman web (komputer). Telefon Bimbit 1) Pergi ke Tetapan (Settings) > klik pada Akaun (Account) > Klik pada Pembaharuan Kelayakan (Refresh Entitlements) > Kemudian klik pada Urus Akaun (Manage account) 2) Klik pada pelan langganan (Subscription Plan) 3) Klik pada batalkan langganan berulang (Cancel Recurring Subscription) Laman Web (Website) 1) Log masuk ke Akaun (Account) > Klik pada Tetapan (Settings) > Pilih Akaun (Account) 2) Pergi ke pelan langganan (Subscription Plan) 3) Klik pada batalkan langganan berulang (Cancel Recurring Subscription) Jika anda menghadapi masalah untuk membatalkan langganan anda, sila sertakan resit pembayaran terkini dan butiran berikut untuk kami menyemak dengan lebih lanjut dan melakukan pembatalan manual daripada sistem kami. Alamat E-mel Berdaftar: Nombor Telefon Berdaftar: Untuk makluman anda, permohonan pembatalan langganan hendaklah dilakukan selewat-lewatnya 5 hari sebelum tarikh tamat langganan anda.",
+      "cleaned_question": "bagaimana saya nak membatalkan langganan bulanan tontonup saya?",
+      "cleaned_answer": "untuk makluman, anda boleh membatalkan pembayaran berulang automatik anda pada profil tonton anda. bagi rujukan mudah anda, berikut adalah langkah-langkah untuk membatalkan langganan tontonup anda: anda boleh menggunakan telefon bimbit atau desktop melalui laman web (komputer). telefon bimbit 1) pergi ke tetapan (settings) klik pada akaun (account) klik pada pembaharuan kelayakan (refresh entitlements) kemudian klik pada urus akaun (manage account) 2) klik pada pelan langganan (subscription plan) 3) klik pada batalkan langganan berulang (cancel recurring subscription) laman web (website) 1) log masuk ke akaun (account) klik pada tetapan (settings) pilih akaun (account) 2) pergi ke pelan langganan (subscription plan) 3) klik pada batalkan langganan berulang (cancel recurring subscription) jika anda menghadapi masalah untuk membatalkan langganan anda, sila sertakan resit pembayaran terkini dan butiran berikut untuk kami menyemak dengan lebih lanjut dan melakukan pembatalan manual daripada sistem kami. alamat e-mel berdaftar: nombor telefon berdaftar: untuk makluman anda, permohonan pembatalan langganan hendaklah dilakukan selewat-lewatnya 5 hari sebelum tarikh tamat langganan anda.",
+      "cleaned_question_en": "How do I cancel my tontonup monthly subscription?",
+      "cleaned_answer_en": "For your information, you can cancel your automatic recurring payment on your Tonton profile. For your easy reference, here are the steps to cancel your TontonUP subscription: you can use a mobile phone or desktop via the website (computer). Mobile phone: 1) Go to settings, click on account, click on refresh entitlements, then click on manage account. 2) Click on subscription plan. 3) Click on cancel recurring subscription. Website: 1) Log in to your account, click on settings, select account. 2) Go to subscription plan. 3) Click on cancel recurring subscription. If you encounter problems canceling your subscription, please include your latest payment receipt and the following details for us to check further and perform a manual cancellation from our system. Registered email address: Registered phone number: For your information, subscription cancellation requests must be made at least 5 days before your subscription expiry date.",
+      "alternate_questions": [
+        "How do I stop my TontonUP monthly subscription?",
+        "What are the steps to cancel my TontonUP monthly plan?",
+        "I want to cancel my TontonUP subscription. How can I do it?"
+      ],
+      "answer_summary": "You can cancel your TontonUP monthly subscription through your Tonton profile settings on mobile or website, or contact support for manual cancellation if needed, ensuring to do so at least 5 days before the expiry date.",
+      "answer_steps": [
+        "Mobile: Go to settings, click on account, click on refresh entitlements, then click on manage account.",
+        "Mobile: Click on subscription plan.",
+        "Mobile: Click on cancel recurring subscription.",
+        "Website: Log in to your account, click on settings, select account.",
+        "Website: Go to subscription plan.",
+        "Website: Click on cancel recurring subscription."
+      ]
+    },
+    "metadata": {
+      "intent": "cancel_subscription",
+      "category": "subscription",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "langganan",
+          "batal",
+          "tontonup",
+          "bulanan",
+          "pembayaran"
+        ],
+        "en": [
+          "subscription",
+          "cancel",
+          "tontonup",
+          "monthly",
+          "recurring payment"
+        ]
+      }
+    }
+  },
+  {
+    "id": "faq_004",
+    "content": {
+      "original_question": "Bagaimana saya nak menukar kata laluan?",
+      "original_answer": "Kami mencadangkan anda untuk membuat tetapan semula kata laluan, kemudian log masuk semula. Anda boleh ke pautan di bawah bagi menetapkan semula kata laluan bagi akaun anda - Laman",
+      "cleaned_question": "bagaimana saya nak menukar kata laluan?",
+      "cleaned_answer": "kami mencadangkan anda untuk membuat tetapan semula kata laluan, kemudian log masuk semula. anda boleh ke pautan di bawah bagi menetapkan semula kata laluan bagi akaun anda - laman",
+      "cleaned_question_en": "How do I change my password?",
+      "cleaned_answer_en": "We suggest you reset your password, then log in again. You can go to the link below to reset the password for your account.",
+      "alternate_questions": [
+        "How do I reset my password?",
+        "I want to update my password.",
+        "Where can I change my password?"
+      ],
+      "answer_summary": "To change your password, you should reset it and then log in again, using the provided link to do so.",
+      "answer_steps": [
+        "Reset your password.",
+        "Log in again."
+      ]
+    },
+    "metadata": {
+      "intent": "password_reset",
+      "category": "account",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "kata laluan",
+          "tukar",
+          "tetapan semula",
+          "log masuk"
+        ],
+        "en": [
+          "password",
+          "change",
+          "reset",
+          "login",
+          "update"
+        ]
+      }
+    }
+  },
+  {
+    "id": "faq_005",
+    "content": {
+      "original_question": "Boleh saya melanggan apabila saya di luar negara Malaysia?",
+      "original_answer": "Untuk makluman, platform kami hanya boleh di tonton di Malaysia sahaja pada ketika ini.",
+      "cleaned_question": "boleh saya melanggan apabila saya di luar negara malaysia?",
+      "cleaned_answer": "untuk makluman, platform kami hanya boleh di tonton di malaysia sahaja pada ketika ini.",
+      "cleaned_question_en": "Can I subscribe when I am outside Malaysia?",
+      "cleaned_answer_en": "Please be informed that our platform can only be viewed in Malaysia at this time.",
+      "alternate_questions": [
+        "Can I watch content from your platform when I am abroad?",
+        "Is your service available internationally?",
+        "Can I subscribe to your platform if I'm not in Malaysia?",
+        "Is your platform accessible outside of Malaysia?"
+      ],
+      "answer_summary": "The platform's content is currently restricted to viewing only within Malaysia.",
+      "answer_steps": []
+    },
+    "metadata": {
+      "intent": "geo_restriction",
+      "category": "technical",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "melanggan",
+          "luar negara",
+          "malaysia",
+          "platform",
+          "tonton"
+        ],
+        "en": [
+          "subscribe",
+          "outside Malaysia",
+          "international",
+          "platform",
+          "view"
+        ]
+      }
+    }
+  },
+  {
+    "id": "faq_006",
+    "content": {
+      "original_question": "Mengapa ralat muncul di skrin semasa saya menikmati Tonton?",
+      "original_answer": "Jika anda ingin mengaktifkan semula langganan untuk kandungan eksklusif, anda boleh melawati pautan ini https://www.tonton.com.my/tontonup untuk menaik taraf akaun anda. Sebaik sahaja anda mengklik pautan, anda akan melihat halaman yang menunjukkan ruangan \"SUBSCRIBE NOW\". Sila klik ke ruangan \"SUBSCRIBE NOW\" di bahagian ATAS sekali untuk meneruskan proses langganan dan pembayaran. Sila pilih kaedah pembayaran pilihan anda dan ikuti arahan seterusnya di dalam Langkah 2. Sebaik sahaja anda telah membuat pembayaran langganan, kami mencadangkan anda untuk klik butang Pembaharuan",
+      "cleaned_question": "mengapa ralat muncul di skrin semasa saya menikmati tonton?",
+      "cleaned_answer": "jika anda ingin mengaktifkan semula langganan untuk kandungan eksklusif, anda boleh melawati pautan ini https://www.tonton.com.my/tontonup untuk menaik taraf akaun anda. sebaik sahaja anda mengklik pautan, anda akan melihat halaman yang menunjukkan ruangan subscribe now. sila klik ke ruangan subscribe now di bahagian atas sekali untuk meneruskan proses langganan dan pembayaran. sila pilih kaedah pembayaran pilihan anda dan ikuti arahan seterusnya di dalam langkah 2. sebaik sahaja anda telah membuat pembayaran langganan, kami mencadangkan anda untuk klik butang pembaharuan",
+      "cleaned_question_en": "Why does an error appear on the screen while I am enjoying tonton?",
+      "cleaned_answer_en": "If you wish to reactivate your subscription for exclusive content, you can visit this link https://www.tonton.com.my/tontonup to upgrade your account. Once you click the link, you will see a page showing the \"subscribe now\" section. Please click the \"subscribe now\" section at the very top to proceed with the subscription and payment process. Please select your preferred payment method and follow the subsequent instructions in step 2. Once you have made the subscription payment, we suggest you click the renewal button.",
+      "alternate_questions": [
+        "Why am I getting an error on tonton?",
+        "What should I do if an error appears while watching tonton?",
+        "Why are errors showing up on my screen when using tonton?"
+      ],
+      "answer_summary": "To resolve errors related to exclusive content on tonton, reactivate your subscription by visiting the tontonup link, clicking \"subscribe now\", selecting a payment method, completing the payment, and clicking the renewal button.",
+      "answer_steps": [
+        "Visit the link https://www.tonton.com.my/tontonup to upgrade your account.",
+        "Click the \"subscribe now\" section at the very top to proceed with the subscription and payment process.",
+        "Select your preferred payment method and follow the subsequent instructions in step 2.",
+        "Click the renewal button once you have made the subscription payment."
+      ]
+    },
+    "metadata": {
+      "intent": "playback_error",
+      "category": "technical",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "ralat",
+          "tonton",
+          "langganan",
+          "tontonup",
+          "pembayaran"
+        ],
+        "en": [
+          "error",
+          "tonton",
+          "subscription",
+          "tontonup",
+          "payment"
+        ]
+      }
+    }
+  },
+  {
+    "id": "faq_007",
+    "content": {
+      "original_question": "Apakah program TV Tuisyen yang disediakan di platform Tonton?",
+      "original_answer": "TV Tuisyen ialah program pembelajaran dalam talian yang menawarkan video pendidikan berkualiti tinggi untuk pelajar Tingkatan 1 hingga Tingkatan 5 (umur 13–17 tahun), selaras dengan Kurikulum Standard Sekolah Menengah (KSSM) yang ditetapkan oleh Kementerian Pendidikan Malaysia. Eksklusif di platform penstriman Tonton, TV Tuisyen menyediakan video pengajaran, latihan, dan kandungan interaktif yang disampaikan oleh tenaga pengajar berpengalaman, termasuk guru selebriti dengan kelayakan akademik cemerlang. Dengan lebih daripada 3,500 video pendidikan, pelajar dan keluarga boleh menikmati akses tanpa had ke semua kandungan pada bila-bila masa dan di mana-mana sahaja, merentas pelbagai peranti. Dengan melanggan Tonton, pengguna memperoleh cara yang mudah, premium, dan mampu milik untuk mengakses keseluruhan pustaka pembelajaran.",
+      "cleaned_question": "apakah program tv tuisyen yang disediakan di platform tonton?",
+      "cleaned_answer": "tv tuisyen ialah program pembelajaran dalam talian yang menawarkan video pendidikan berkualiti tinggi untuk pelajar tingkatan 1 hingga tingkatan 5 (umur 1317 tahun), selaras dengan kurikulum standard sekolah menengah (kssm) yang ditetapkan oleh kementerian pendidikan malaysia. eksklusif di platform penstriman tonton, tv tuisyen menyediakan video pengajaran, latihan, dan kandungan interaktif yang disampaikan oleh tenaga pengajar berpengalaman, termasuk guru selebriti dengan kelayakan akademik cemerlang. dengan lebih daripada 3,500 video pendidikan, pelajar dan keluarga boleh menikmati akses tanpa had ke semua kandungan pada bila-bila masa dan di mana-mana sahaja, merentas pelbagai peranti. dengan melanggan tonton, pengguna memperoleh cara yang mudah, premium, dan mampu milik untuk mengakses keseluruhan pustaka pembelajaran.",
+      "cleaned_question_en": "What is the TV Tuisyen program provided on the Tonton platform?",
+      "cleaned_answer_en": "TV Tuisyen is an online learning program that offers high-quality educational videos for students from Form 1 to Form 5 (ages 13-17), in line with the Secondary School Standard Curriculum (KSSM) set by the Malaysian Ministry of Education. Exclusive to the Tonton streaming platform, TV Tuisyen provides instructional videos, exercises, and interactive content delivered by experienced educators, including celebrity teachers with excellent academic qualifications. With more than 3,500 educational videos, students and families can enjoy unlimited access to all content anytime and anywhere, across various devices. By subscribing to Tonton, users gain an easy, premium, and affordable way to access the entire learning library.",
+      "alternate_questions": [
+        "What is the TV Tuisyen program on the Tonton platform?",
+        "Can you explain what TV Tuisyen offers on Tonton?",
+        "What kind of educational content is TV Tuisyen on Tonton?"
+      ],
+      "answer_summary": "TV Tuisyen is an exclusive online learning program on Tonton, offering over 3,500 high-quality educational videos aligned with the Malaysian curriculum for students aged 13-17, delivered by experienced educators.",
+      "answer_steps": []
+    },
+    "metadata": {
+      "intent": "content_information",
+      "category": "content",
+      "platform": "TontonUp",
+      "language": "ms",
+      "keywords": {
+        "ms": [
+          "tv tuisyen",
+          "tonton",
+          "pembelajaran dalam talian",
+          "video pendidikan",
+          "kssm"
+        ],
+        "en": [
+          "TV Tuisyen",
+          "Tonton",
+          "online learning",
+          "educational videos",
+          "KSSM"
+        ]
+      }
+    }
+  }
+]
