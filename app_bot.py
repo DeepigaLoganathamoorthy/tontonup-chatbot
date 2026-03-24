@@ -6,8 +6,8 @@ from datetime import datetime
 
 st.set_page_config(page_title="TontonUp Help", layout="centered")
 
-st.title("TontonUp Support (Internal Beta)")
-st.write("type your issue below. be specific lah.")
+st.title("TontonUp Support (Beta)")
+st.write("Type your problem below, we will do our best to help")
 
 #init session
 if 'chat_his' not in st.session_state:

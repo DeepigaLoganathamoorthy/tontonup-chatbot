@@ -1,27 +1,55 @@
 import os, requests, streamlit as st
 from sentence_transformers import SentenceTransformer
 from qdrant_client import QdrantClient
+import json
 
-# --- CONFIG & KEYS ---
-# getting key from streamlit secrets
+
 key = st.secrets.get("GEMINI_API_KEY")
 
-# fixed the model name to 1.5 since 2.5 isnt out yet lol
 url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key={key}"
 
 
-# --- LOAD RESOURCES (CACHED) ---
+
 @st.cache_resource
 def load_stuff():
-    # pull bge model from hub
     m = SentenceTransformer("BAAI/bge-m3")
-    # connect to the local qdrant folder
-    c = QdrantClient(path="./qdrant_data")
+    db = "./qdrant_data"
+    if not os.path.exists(db): os.makedirs(db)
+    
+    c = QdrantClient(path=db)
+    
+    try:
+        c.get_collection("faq_collection")
+    except:
+        print("Collection missing! Rebuilding...")
+        from qdrant_client.models import VectorParams, Distance, PointStruct
+        
+        c.recreate_collection(
+            collection_name="faq_collection",
+            vectors_config=VectorParams(size=1024, distance=Distance.COSINE)
+        )
+        
+        with open('./data/augmented_faq.json', 'r') as f:
+            data = json.load(f)
+            
+        points = []
+        for i, faq in enumerate(data):
+            con = faq["content"]
+            # quick and dirty text prep
+            txt = f"{con['cleaned_question']} {con.get('answer_summary', '')}"
+            v = m.encode(txt, normalize_embeddings=True).tolist()
+            
+            points.append(PointStruct(
+                id=i, 
+                vector=v, 
+                payload={"content": con, "metadata": faq.get("metadata", {})}
+            ))
+        
+        c.upsert(collection_name="faq_collection", points=points)
+        print("Done seeding!")
+        
     return m, c
 
-model, client = load_stuff()
-
-# --- THE LOGIC ---
 
 def call_gemini(p):
     if not key: return "API Key missing!"
@@ -38,10 +66,8 @@ def call_gemini(p):
         return None
 
 def get_context(query):
-    # vectorize the user question
     v = model.encode(query, normalize_embeddings=True)
     
-    # search top 3
     hits = client.query_points(
         collection_name="faq_collection",
         query=v,
@@ -50,7 +76,6 @@ def get_context(query):
     
     if not hits: return ""
 
-    # build a messy string of context
     ctx = ""
     for h in hits:
         p = h.payload["content"]
@@ -59,10 +84,8 @@ def get_context(query):
     return ctx
 
 def ask_bot(user_q):
-    # 1. get matches
     context = get_context(user_q)
     
-    # 2. build prompt
     prompt = f"""
     You are a friendly TontonUp support bot. 
     Use the context to answer. If not there, ask them to email support@tonton.com.my.
@@ -78,7 +101,7 @@ def ask_bot(user_q):
     ans = call_gemini(prompt)
     
     if not ans:
-        return "Maaf, sistem tengah sibuk. Cuba lagi jap lagi."
+        return "Maaf, sistem tengah sibuk. Cuba sekejap lagi ye."
     
     # clean up potential markdown asterisks
     return ans.replace("*", "").strip()
