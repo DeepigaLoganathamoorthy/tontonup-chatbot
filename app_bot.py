@@ -14,10 +14,27 @@ if 'chat_his' not in st.session_state:
 
 #sidebar
 with st.sidebar:
-    st.subheader("Admin Tools")
-    if st.button("Reset Chat"):
+    st.subheader("🛠️ Admin Tools")
+    if st.button("Reset Chat", use_container_width=True):
         st.session_state.chat_his = []
         st.rerun()
+    
+    st.divider() # Adds a nice visual line
+    
+    st.subheader("📡 System Status")
+    try:
+        from pipe import q_client
+        collections = q_client.get_collections().collections
+        exists = any(c.name == "faq_collection" for c in collections)
+        
+        if exists:
+            st.success("🟢 Database: Connected")
+        else:
+            st.warning("🟡 Collection Missing")
+            st.info("Run upload_data.py locally.")
+    except Exception as e:
+        st.error("🔴 Disconnected")
+        st.caption(f"Error: {str(e)[:50]}...")
 
 #chat display
 for i, m in enumerate(st.session_state.chat_his):
