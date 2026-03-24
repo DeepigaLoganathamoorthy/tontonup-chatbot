@@ -39,10 +39,12 @@ for i, m in enumerate(st.session_state.chat_his):
         st.write(m["txt"])
          
         if role == "bot" and i == len(st.session_state.chat_his)-1:
-            c1, c2 = st.columns([0.1, 0.1])
+            # We add a 0.8 width "spacer" column first
+            # The buttons (0.1 and 0.1) get shoved to the far right
+            spacer, c1, c2 = st.columns([0.8, 0.1, 0.1])
+            
             with c1:
                 if st.button("👍", key=f"up_{i}"):
-                    
                     u_q = st.session_state.chat_his[i-1]["txt"]
                     log_it(u_q, m["txt"], "GOOD")
                     st.toast("Thanks!")
