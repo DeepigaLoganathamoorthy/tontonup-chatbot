@@ -27,7 +27,7 @@ for i, m in enumerate(st.session_state.chat_his):
          
         # Feedback buttons for the last bot message
         if role == "bot" and i == len(st.session_state.chat_his)-1:
-            c1, c2, c3 = st.columns([0.8, 0.1, 0.1]) # Tight columns for emojis
+            c1, c2, c3 = st.columns([0.1, 0.1, 0.1]) # Tight columns for emojis
             
             with c1:
                 if st.button("👍", key=f"up_{i}"):
