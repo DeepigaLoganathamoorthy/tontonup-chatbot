@@ -1,5 +1,5 @@
 import streamlit as st
-from pipeline import ask_bot
+from pipe import ask_bot
 import os
 from datetime import datetime
 

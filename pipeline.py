@@ -21,7 +21,7 @@ def load_stuff():
     try:
         c.get_collection("faq_collection")
     except:
-        print("Collection missing! Rebuilding...")
+        print("Collection missing Rebuild")
         from qdrant_client.models import VectorParams, Distance, PointStruct
         
         c.recreate_collection(
