@@ -4,10 +4,18 @@ from qdrant_client import QdrantClient
 from qdrant_client.models import Filter, FieldCondition, MatchValue
 from qdrant_client.models import VectorParams, Distance, PointStruct
 
-GEMINI_API_KEY = st.secrets["GEMINI_API_KEY"]
-QDRANT_URL = st.secrets["QDRANT_URL"]
-QDRANT_API_KEY = st.secrets["QDRANT_API_KEY"]
 GEMINI_URL = "https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent"
+
+def get_secret(key):
+    try:
+        return st.secrets[key]
+    except:
+        return os.getenv(key)
+
+GEMINI_API_KEY = get_secret("GEMINI_API_KEY")
+QDRANT_URL = get_secret("QDRANT_URL")
+QDRANT_API_KEY = get_secret("QDRANT_API_KEY")
+
 
 @st.cache_resource
 def load_stuff():

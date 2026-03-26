@@ -3,7 +3,6 @@
 A professional **Retrieval-Augmented Generation (RAG)** assistant designed for TontonUp customer support. This system can handle both **English and Bahasa Malaysia queries smoothly** by combining semantic search with the **Gemini 2.5 Flash API**.
 
 ---
-
 ## The Architecture (Detailed Design)
 
 This system uses a **modular RAG pipeline** to make sure it is reliable, supports multiple languages, and reduces hallucination.
@@ -109,6 +108,7 @@ Qdrant searches within that intent
 ├── app_bot.py                     # Streamlit UI & Chat Logic
 ├── pipe.py                        # the logic for the brain (lite version) (Vector Search + Gemini API)
 ├── requirements.txt               # Dependency list
+├── Dockerfile                     # Containerization
 ├── data_preprocess.py             # the data cleaning and schema decisions
 ├── embed_model.py                 # embeddings & models used here for RAG
 ├── upload_qdrant.py               # store embeddings in Qdrant cloud
@@ -120,55 +120,52 @@ Qdrant searches within that intent
 
 ---
 
-## The Architecture
+## Overall Technical Stack
+- **Embeddings:** `BAAI/bge-m3` 
+(Chosen for its elite performance in handling "Manglish" and code-switching).
 
-  - **Embeddings:** `BAAI/bge-m3`  
-  *(Chosen because it works very well with both English and Malay, even when users mix both languages in one sentence. It helps the system understand meaning better and improves search accuracy.)*
+- **Vector Database:** Qdrant 
+(Supports native metadata filtering and fast local/cloud inference).
 
-- **Vector Database:** `Qdrant`  
-  *(Used because it is fast, easy to run locally, and supports filtering by metadata like intent or category. It does not need external services, which makes the system simpler and more stable.)*
+- **LLM:** Gemini 2.5 Flash 
+(Requirement & supports Malaysian/English language rules).
 
+- **UI:** Streamlit 
+(Interactive chat interface with admin status monitoring).
 
-- **LLM:** `Gemini 2.5 Flash`  
-  *(Fast, cheap, and supports structured JSON output)*
-
-- **UI:** `Streamlit`  
-  *(Simple chat interface with feedback logging)*
-
+- **Deployment:** Fully Dockerized for consistent environment scaling.
 ---
 
 ## Setup & Installation
 
-### 1. Clone & Install
-
-You'll need **Python 3.9+**. Some libraries like `sentence-transformers` are heavy (~2GB download on first run).
-
-```bash
-pip install streamlit sentence-transformers qdrant_client python-docx requests python-dotenv
-```
-
----
-
-### 2. Secrets Configuration
-
-If running locally, create a `.env` file.  
-If deploying to **Streamlit Cloud**, add this to your Secrets:
-
-```toml
-GEMINI_API_KEY = "your_api_key_here"
-```
-
----
-
-### 3. Running the App
+### 1. Environment Configuration
+Create a **.env** file in the root directory with the following variables:
 
 ```bash
+GEMINI_API_KEY=your_google_api_key
+QDRANT_URL=your_qdrant_cloud_url
+QDRANT_API_KEY=your_qdrant_api_key
+GEMINI_URL=https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent
+```
+### 2. Running with Docker
+The fastest way to get the system running in a contained environment:
+
+```bash
+#Build the image
+docker build -t tontonup-bot .
+
+#Run the container
+docker run -d -p 8501:8501 --name tonton-live --env-file .env tontonup-bot
+Access the bot at: http://localhost:8501
+```
+### 3. Local Development
+```bash
+pip install -r requirements.txt
 streamlit run app_bot.py
 ```
-
 ---
 
-## Key Features & "Human" Logic
+## Features & Logic
 
 - **Multi-lingual Handling**  
   Uses the `BGE-M3` model specifically to catch nuances in Manglish/Malay slang  
@@ -182,10 +179,8 @@ streamlit run app_bot.py
 
 - **Feedback System**  
   Includes 👍 / 👎 buttons. This can be used in future for logs.
-
 ---
-
-## ⚠️ Known Issues / Troubleshooting
+## Issues
 
 - **Cold Starts**  
   Streamlit Cloud might "sleep". The first interaction takes ~30 seconds to load the embedding model into RAM.

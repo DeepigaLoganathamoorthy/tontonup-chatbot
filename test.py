@@ -1,6 +1,4 @@
 from qdrant_client import QdrantClient
-
-# COPY THESE EXACTLY FROM YOUR STRMLIT SECRETS
 import os
 from dotenv import load_dotenv
 load_dotenv()

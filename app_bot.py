@@ -57,32 +57,14 @@ for i, m in enumerate(st.session_state.chat_his):
 
 query = st.chat_input("Dah bayar tapi takleh tengok?")
 
-if query:
-    
-    with st.chat_message("user"):
-        st.markdown(query)
-
-    st.session_state.chat_his.append({"role": "user", "txt": query})
-    
-    with st.chat_message("assistant"):
-        with st.spinner("wait ya..."):
-            ans = generate_answer(query)
-            st.write(ans)
-    
-    # save to history
-    st.session_state.chat_his.append({"role": "assistant", "txt": ans})
-
 
 if query:
     with st.chat_message("user"):
         st.markdown(query)
-    st.session_state.chat_his.append({"role": "user", "txt": query})
-    
     with st.chat_message("assistant"):
         with st.spinner("Kejap ye..."):
             ans = generate_answer(query)
             st.write(ans)
-    
-    # Save to history
+    st.session_state.chat_his.append({"role": "user", "txt": query})
     st.session_state.chat_his.append({"role": "assistant", "txt": ans})
-    st.rerun() 
+    st.rerun()
